@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google BigQuery - Thông tin chi tiết</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Google BigQuery: Hướng dẫn toàn diện cho nhà phân tích dữ liệu</h1>
+    </header>
+    <main>
+      <section id="overview">
+        <h2>1. Google BigQuery là gì?</h2>
+        <p>
+          Google BigQuery là một
+          <strong>kho dữ liệu không máy chủ</strong> (serverless) thuộc Google
+          Cloud Platform (GCP), được thiết kế để xử lý và phân tích khối lượng
+          dữ liệu lớn (petabyte-scale) với tốc độ cao. BigQuery sử dụng
+          <strong>GoogleSQL</strong> để thực hiện các truy vấn phức tạp mà không
+          cần quản lý cơ sở hạ tầng, tập trung vào phân tích để đưa ra quyết
+          định kinh doanh.
+        </p>
+        <ul>
+          <li>
+            <strong>Ra mắt</strong>: Công bố tại Google I/O 2010, phát hành
+            chính thức năm 2012.
+          </li>
+          <li>
+            <strong>Công nghệ nền tảng</strong>: Dremel (truy vấn phân tán),
+            Colossus (lưu trữ), Borg (điều phối).
+          </li>
+          <li>
+            <strong>Mục đích sử dụng</strong>: Phân tích dữ liệu lớn, báo cáo
+            kinh doanh, phân tích địa lý, Machine learning(BigQuery ML).
+          </li>
+          <li>
+            <strong>Ngành ứng dụng</strong>: Bán lẻ, tài chính, y tế, truyền
+            thông (ví dụ: Spotify, Twitter, The New York Times).
+          </li>
+        </ul>
+        <img
+          src="./img/1680032659600.png"
+          alt="BigQuery Logo"
+          style="
+            width: 500px;
+            height: auto;
+            margin: 100px 0;
+            position: relative;
+          "
+        />
+      </section>
+
+      <section id="features">
+        <h2>2. Các tính năng chính</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>Kiến trúc không máy chủ</h3>
+            <p>
+              Tách biệt lưu trữ và tính toán, tự động mở rộng, không cần cấu
+              hình máy chủ.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Lưu trữ dạng cột</h3>
+            <p>
+              Tối ưu cho phân tích (OLAP), nén hiệu quả, hỗ trợ dữ liệu lồng
+              (ARRAY, STRUCT).
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>GoogleSQL</h3>
+            <p>
+              Tuân thủ ANSI SQL 2011, hỗ trợ JOIN, hàm địa lý, và xử lý JSON.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>BigQuery ML</h3>
+            <p>
+              Xây dựng mô hình máy học (hồi quy, phân loại, dự báo) trực tiếp
+              trong BigQuery.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Kết nối nguồn dữ liệu</h3>
+            <p>
+              Hỗ trợ Cloud Storage, Bigtable, Sheets, Public Datasets, Google Trends.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Bảo mật và quản trị</h3>
+            <p>
+              IAM (Intelligent Autonomous Machines) chi tiết, mã hóa mặc định, tuân thủ GDPR, HIPAA, hỗ trợ
+              INFORMATION_SCHEMA.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Tích hợp</h3>
+            <p>
+              Kết nối với Looker Studio, Tableau, Power BI, Python, Vertex AI, và các công cụ khác.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Tối ưu hiệu suất</h3>
+            <p>
+              BI Engine, Materialized Views, Partitioned/Clustered Tables tăng
+              tốc truy vấn.
+            </p>
+          </div>
+        </div>
+        <img
+          src="./img/CGC_Dataprep_Architecture.max-2800x2800-1-2048x1104.png"
+          alt="BigQuery Features"
+          style="
+            width: 900px;
+            position: relative;
+            margin: 100px 0;
+            left: 50%;
+            transform: translateX(-50%);
+          "
+        />
+      </section>
+
+      <section id="benefits">
+        <h2>3. Lợi ích của BigQuery</h2>
+        <ul>
+          <li>
+            <strong>Hiệu suất vượt trội</strong>: Xử lý hàng tỷ dòng dữ liệu
+            trong vài giây nhờ Dremel.
+            <img
+              src="./img/BQ-ML-Combined.jpg"
+              alt="BigQuery Performance"
+              style="
+                width: 600px;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                position: relative;
+              "
+            />
+          </li>
+          <li>
+            <strong>Dễ sử dụng</strong>: Không cần quản lý hạ tầng, giao diện
+            thân thiện.
+          </li>
+          <li>
+            <strong>Chi phí linh hoạt</strong>: Miễn phí 1TB truy vấn và 10GB
+            lưu trữ/tháng.
+          </li>
+          <li>
+            <strong>Tích hợp mạnh mẽ</strong>: Kết nối với Google Cloud, BI
+            tools, và client libraries.
+            <img
+              src="./img/2021-06-19-19_01_11-Edit-Post-‹-Cloud-Training-Program-—-WordPress-and-7-more-pages-Personal-Mic.jpg"
+              alt="BigQuery Integration"
+              style="
+                width: 600px;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                position: relative;
+              "
+            />
+          </li>
+          <li>
+            <strong>Khả năng mở rộng</strong>: Tự động mở rộng lưu trữ và tính
+            toán, không giới hạn quy mô.
+          </li>
+          <li>
+            <strong>Bảo mật cao cấp</strong>: Mã hóa mặc định, IAM chi tiết,
+            tuân thủ các tiêu chuẩn.
+          </li>
+        </ul>
+      </section>
+
+      <section id="limitations">
+        <h2>4. Hạn chế của BigQuery</h2>
+        <ul>
+          <li>
+            <strong>Chi phí</strong>: Truy vấn full table scan hoặc
+            INFORMATION_SCHEMA (tối thiểu 10MB) có thể tốn kém.
+          </li>
+          <li>
+            <strong>Hạn chế đa vùng</strong>: Không truy vấn đồng thời dữ liệu
+            từ nhiều khu vực địa lý.
+          </li>
+          <li>
+            <strong>Thời gian thực</strong>: Continuous Queries (Preview) chưa
+            ổn định, phù hợp hơn cho phân tích lịch sử.
+          </li>
+          <li>
+            <strong>Phụ thuộc GoogleSQL</strong>: Một số tính năng yêu cầu
+            GoogleSQL, không hỗ trợ Legacy SQL.
+          </li>
+          <li>
+            <strong>Tích hợp bên ngoài</strong>: Cần cấu hình bổ sung cho Power
+            BI, Tableau; dữ liệu lồng cần xử lý đặc biệt.
+          </li>
+        </ul>
+      </section>
+
+      <section id="pricing">
+        <h2>5. Chi phí BigQuery</h2>
+        <ul>
+          <li>
+            <strong>Lưu trữ</strong>:
+            <ul>
+              <li>Active: $0.02/GB/tháng (miễn phí 10GB/tháng).</li>
+              <li>
+                Long-term: $0.01/GB/tháng (không chỉnh sửa trong 90 ngày).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Truy vấn</strong>: $6.25/TB quét (miễn phí 1TB/tháng).
+            <ul>
+              <li><strong>On-demand (theo dung lượng truy vấn)</strong>:</li>
+              <li>$5/TB dữ liệu được đọc (không phải dung lượng lưu trữ).</li>
+              <li>
+                Truy vấn nhỏ thì rẻ, nhưng nếu query nhiều hoặc dữ liệu lớn sẽ
+                tốn kém nhanh.
+              </li>
+            </ul>
+            <ul>
+              <li><strong>Flat-rate (gói cố định):</strong>:</li>
+              <li>
+                Trả theo slot tính toán (phù hợp cho team lớn, query thường
+                xuyên)..
+              </li>
+              <li>Ví dụ: $2,000/tháng cho 100 slot tính toán chuyên dụng</li>
+            </ul>
+            <strong>Chi phí xuất dữ liệu (Export / Extract)</strong>
+            <ul>
+              <li>Xuất dữ liệu từ BigQuery sang Cloud Storage: miễn phí.</li>
+              <li>Xuất dữ liệu từ BigQuery sang Google Drive: $0.12/GB.</li>
+              <li>Download ra ngoài (ví dụ tải về máy): tính phí egress.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Capacity-based pricing</strong>: Mua slot cố định (100 slots
+            trở lên).
+          </li>
+          <li>
+            <strong>Ví dụ</strong>: 100 GB dữ liệu lưu trữ → $2/tháng
+            <strong>Query đọc 2 TB dữ liệu mỗi tháng → $10/tháng.</strong>
+            <strong>Tổng chi phí: khoảng $12/tháng (~300.000đ/tháng)</strong>
+          </li>
+        </ul>
+      </section>
+      <section id="resources">
+        <h2>6. Tài liệu tham khảo</h2>
+        <ul>
+          <li>
+            <a href="https://cloud.google.com/bigquery/docs/" target="_blank"
+              >BigQuery Documentation</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.datacamp.com/blog/beginners-guide-to-bigquery"
+              target="_blank"
+              >DataCamp: Beginner's Guide to BigQuery</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://cloud.google.com/blog/products/data-analytics"
+              target="_blank"
+              >Google Cloud Blog: Data Analytics</a
+            >
+          </li>
+          <li>
+            <a href="https://cloud.google.com/learn" target="_blank"
+              >Google Cloud Skills Boost</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section id="comparison">
+        <h2>SO SÁNH MUA TRỰC TIẾP VÀ MUA THÔNG QUA NHÀ CUNG CẤP TRUNG GIAN </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tiêu chí</th>
+                    <th>Mua trực tiếp từ Google Cloud</th>
+                    <th>Qua đối tác tại Việt Nam (Gimasys, Cloud Ace, v.v.)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Quyền kiểm soát</td>
+                    <td>Toàn quyền quản lý và cấu hình</td>
+                    <td>Có thể phụ thuộc một phần vào đơn vị triển khai</td>
+                </tr>
+                <tr>
+                    <td>Thanh toán</td>
+                    <td>Thẻ quốc tế (Visa/Mastercard)</td>
+                    <td>Có thể thanh toán bằng VND, xuất hóa đơn tài chính</td>
+                </tr>
+                <tr>
+                    <td>Chi phí triển khai ban đầu</td>
+                    <td>Tự làm nên chi phí thấp (nếu có sẵn năng lực)</td>
+                    <td>Tốn thêm phí tư vấn, cấu hình ban đầu</td>
+                </tr>
+                <tr>
+                    <td>Chi phí vận hành</td>
+                    <td>Tính trực tiếp theo tài nguyên sử dụng</td>
+                    <td>Có thể phát sinh thêm phí quản lý, support</td>
+                </tr>
+                <tr>
+                    <td>Hỗ trợ kỹ thuật</td>
+                    <td>Miễn phí ở mức cơ bản; cần mua gói support</td>
+                    <td>Có đội ngũ hỗ trợ kỹ thuật tiếng Việt theo gói dịch vụ đã thỏa thuận</td>
+                </tr>
+                <tr>
+                    <td>Tư vấn và triển khai ban đầu</td>
+                    <td>Tự học và triển khai</td>
+                    <td>Được tư vấn, đào tạo, thiết kế kiến trúc dữ liệu, tối ưu hệ thống</td>
+                </tr>
+                <tr>
+                    <td>Phù hợp với đối tượng</td>
+                    <td>Công ty có IT nội bộ mạnh, thích tự chủ</td>
+                    <td>Công ty vừa & nhỏ, hoặc muốn đi nhanh, cần người đồng hành</td>
+                </tr>
+                <tr>
+                    <td>Khả năng tích hợp hệ thống</td>
+                    <td>Phải tự tích hợp</td>
+                    <td>Có kinh nghiệm tích hợp với SAP, ERP, CRM, v.v.</td>
+                </tr>
+                <tr>
+                    <td>Thời gian triển khai</td>
+                    <td>Tùy vào năng lực nội bộ</td>
+                    <td>Nhanh hơn nhờ đội ngũ chuyên nghiệp hỗ trợ</td>
+                </tr>
+                <tr>
+                    <td>Tiếp cận công nghệ mới</td>
+                    <td>Có, qua tài liệu và công cụ Google</td>
+                    <td>Có, thậm chí nhanh hơn nếu đối tác là Premier Partner của Google</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="partners">
+      <h2>Danh sách công ty cung cấp dịch vụ BigQuery tại Việt Nam</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th>STT</th>
+                  <th>Tên công ty</th>
+                  <th>Vai trò/Chứng nhận</th>
+                  <th>Dịch vụ chính liên quan BigQuery</th>
+                  <th>Website/Nguồn</th>
+                  <th>Chi phí</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>1</td>
+                  <td>Google</td>
+                  <td>Nhà cung cấp chính</td>
+                  <td>Cung cấp Google BigQuery trực tiếp</td>
+                  <td><a href="https://cloud.google.com/bigquery" target="_blank">cloud.google.com/bigquery</a></td>
+                  <td>Liên hệ để biết chi tiết</td>
+              </tr>
+              <tr>
+                  <td>2</td>
+                  <td>Gimasys</td>
+                  <td>Đối tác chính thức Google Cloud</td>
+                  <td>Triển khai, tối ưu chi phí BigQuery, tư vấn BI</td>
+                  <td><a href="https://gcloudvn.com" target="_blank">gcloudvn.com</a></td>
+                  <td>Liên hệ để biết chi tiết</td>
+              </tr>
+              <tr>
+                  <td>3</td>
+                  <td>CMC Telecom</td>
+                  <td>CMC Telecom mang trong mình tầm nhìn trở thành nhà cung cấp hạ tầng số hàng đầu khu vực, với sứ mệnh cung cấp cho khách hàng trong nước và quốc tế nền tảng hạ tầng số toàn diện - một CSP ( Comprehensive Service Provider)</td>
+                  <td>Tư vấn + triển khai hạ tầng GCP (gồm cả BigQuery)</td>
+                  <td><a href="https://cmctelecom.vn/" target="_blank">https://cmctelecom.vn//</a></td>
+                  <td>Liên hệ để biết chi tiết</td>
+              </tr>
+              <tr>
+                  <td>4</td>
+                  <td>FPT Smart Cloud</td>
+                  <td>BigQuery Ready (chứng nhận GCP)</td>
+                  <td>Triển khai BigQuery, di trú dữ liệu, tối ưu truy vấn</td>
+                  <td><a href="https://fptsmartcloud.com/" target="_blank">https://fptsmartcloud.com/</a></td>
+                  <td>Liên hệ để biết chi tiết</td>
+              </tr>
+              <tr>
+                  <td>5</td>
+                  <td>Vinaweb (VinaGroup)</td>
+                  <td>Đối tác chiến lược Google</td>
+                  <td>Cung cấp GCP/BQ cho các tập đoàn lớn: Momo, Novaland, Heineken</td>
+                  <td><a href="https://vinagroup.com.vn" target="_blank">vinagroup.com.vn</a></td>
+                  <td>Liên hệ để biết chi tiết</td>
+              </tr>
+              <tr>
+                  <td>6</td>
+                  <td>GCS.vn</td>
+                  <td>Đối tác GCP</td>
+                  <td>Triển khai BigQuery kết hợp AI, Data Lakes</td>
+                  <td><a href="https://gcs.vn" target="_blank">gcs.vn</a></td>
+                    <td>Liên hệ để biết chi tiết</td>
+              </tr> 
+              <tr>
+                  <td>7</td>
+                  <td>CloudAZ</td>
+                  <td>Đối tác triển khai GCP</td>
+                  <td>Giải pháp phân tích dữ liệu lớn với BigQuery</td>
+                  <td><a href="https://cloudaz.io" target="_blank">cloudaz.io</a></td>
+                  <td>Liên hệ để biết chi tiết</td>
+              </tr>
+          </tbody>
+      </table>
+  </section>
+    </main>
+  </body>
+</html>
+</script>
